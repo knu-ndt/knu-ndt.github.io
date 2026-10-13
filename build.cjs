@@ -8,7 +8,10 @@ const origin = 'https://knu-ndt.github.io';
 const pages = {
   'index.html': ['NDT & SHM Lab · 경북대학교', '경북대학교 건축학부 강상구 교수의 NDT & SHM Lab. 비파괴검사, 구조건전성 모니터링, 머신러닝 연구.'],
   'research.html': ['연구분야 · NDT & SHM Lab', '비파괴검사, 구조건전성 모니터링, 데이터 기반 진단을 통해 재료와 구조물의 상태를 이해하고 안전한 유지관리 방법을 연구합니다.'],
-  'professor.html': ['강상구 교수 · NDT & SHM Lab', '경북대학교 건축학부 강상구 교수의 연구분야, 학력, 경력과 Google Scholar 프로필.'],
+  'people.html': ['People · NDT & SHM Lab', '경북대학교 NDT & SHM Lab 교수, 박사과정, 석사과정, 학석연계과정, 학부연구생과 입학 예정 구성원.'],
+  'awards.html': ['Awards · NDT & SHM Lab', 'NDT & SHM Lab의 수상 소식과 사진.'],
+  'gallery.html': ['Gallery · NDT & SHM Lab', 'NDT & SHM Lab의 연구, 학술 활동과 일상 사진.'],
+  'professor.html': ['People · NDT & SHM Lab', '경북대학교 NDT & SHM Lab 교수와 구성원 소개.'],
   'publications.html': ['Publications · NDT & SHM Lab', '강상구 교수의 국제·국내 학술지 논문, 학술대회와 학위논문. Google Scholar 연결 및 논문 검색.'],
   'contact.html': ['연락처 · NDT & SHM Lab', '경북대학교 건축학부 NDT & SHM Lab 연구 문의. 강상구 교수 kangs@knu.ac.kr.'],
   '404.html': ['페이지를 찾을 수 없습니다 · NDT & SHM Lab', 'NDT & SHM Lab 홈페이지로 이동하세요.']
@@ -36,7 +39,7 @@ for (const [file,[title,description]] of Object.entries(pages)) {
   }
   const prefix = file==='404.html'?'/':'';
   const header=nodes['#header'].innerHTML.replace('class="active"','class="active" aria-current="page"');
-  const canonical=file==='index.html'?`${origin}/`:`${origin}/${file}`;
+  const canonical=file==='index.html'?`${origin}/`:`${origin}/${file==='professor.html'?'people.html':file}`;
   const schema=JSON.stringify({"@context":"https://schema.org","@type":"ResearchOrganization","name":"NDT & SHM Lab","url":origin+'/',"parentOrganization":{"@type":"CollegeOrUniversity","name":"Kyungpook National University"},"member":{"@type":"Person","name":"Sanggoo Kang","alternateName":"강상구","jobTitle":"Assistant Professor","email":"kangs@knu.ac.kr","sameAs":["https://scholar.google.com/citations?hl=ko&user=CzZ7ILAAAAAJ","https://research.knu.ac.kr/en/persons/sanggoo-kang/"]}});
   fs.writeFileSync(path.join(root,file),`<!doctype html>
 <html lang="ko"><head>
@@ -49,7 +52,7 @@ ${file==='404.html'?'<meta name="robots" content="noindex">':`<link rel="canonic
 <script defer src="${prefix}${asset('publications.js')}"></script><script defer src="${prefix}${asset('app.js')}"></script>
 </head><body data-page="${document.body.dataset.page}"><a class="skip" href="#main">본문으로 건너뛰기</a><header id="header">${header}</header>
 <main id="main">${main}</main><footer id="footer">${nodes['#footer'].innerHTML}</footer>
-<noscript><style>.tools,.searchbar{display:none}</style></noscript></body></html>\n`);
+<noscript><style>.tools,.searchbar,.member-filters{display:none}.member-detail-fallback{display:block}</style></noscript></body></html>\n`);
 }
-fs.writeFileSync(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.keys(pages).filter(x=>x!=='404.html').map(x=>`<url><loc>${origin}/${x==='index.html'?'':x}</loc></url>`).join('\n')}\n</urlset>\n`);
-console.log('Built six static pages and sitemap.');
+fs.writeFileSync(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.keys(pages).filter(x=>x!=='404.html'&&x!=='professor.html').map(x=>`<url><loc>${origin}/${x==='index.html'?'':x}</loc></url>`).join('\n')}\n</urlset>\n`);
+console.log('Built nine static pages and sitemap.');
