@@ -16,7 +16,6 @@
 .research-summary .research-sub{font:10px/1.8 monospace;color:var(--green);margin-bottom:23px}
 .tags{list-style:none;padding:0;display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .tags li{border:1px solid var(--line);padding:4px 10px;font-size:11px;color:var(--green)}
-.related .section-title h3{font-size:15px;font-weight:500;margin:0}.related .paper{grid-template-columns:42px 1fr;gap:13px}.related .paper h3{font-size:14px}
 .research-cta{display:flex;justify-content:space-between;gap:30px;align-items:center;padding:55px 0}.research-cta h2{font-size:24px;margin:15px 0 0;word-break:keep-all}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding:65px 0}.contact-grid h2{font-size:29px;margin:22px 0 16px}.contact-grid p{font-size:14px}.contact-grid .email{display:inline-block;margin-top:25px}.contact-person{margin-top:35px;font-size:13px}.contact-person p{font-size:12px}
 .address-card{padding:32px;background:var(--tint);border:1px solid var(--line)}.address-card .button{margin-top:16px}.contact-links{display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid var(--line);padding:40px 0 70px}.contact-links h3{font-size:20px;font-weight:500}.contact-links p{font-size:13px}
@@ -25,3 +24,76 @@
 @media(max-width:1080px) and (min-width:721px){.bar nav{gap:11px;font-size:12px}.bar{gap:14px}.brand small{font-size:7px}.brand b{font-size:13px}.research-detail{gap:35px}}
 @media(max-width:720px){.research-detail,.contact-grid,.contact-links{grid-template-columns:1fr;gap:30px;padding:38px 0}.research-summary h2{font-size:27px}.research-cta{display:block}.research-cta .button{margin-top:25px}.address-card{padding:24px}.topic-nav{gap:24px}.hero h1{font-size:clamp(27px,7vw,39px);letter-spacing:-1.3px}.hero .actions{flex-wrap:wrap}.brand small{font-size:7px;letter-spacing:1px}.brand b{font-size:13px}.brand{gap:8px}.mark{width:30px;height:35px}.tools{gap:5px}.tools button{width:30px;height:30px}.contact-grid .email{font-size:21px}.error-page h1{font-size:32px}.head h1{overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Readable typography across the site. */
+body{font-size:17px;line-height:1.8}
+.bar{gap:24px}.bar nav{font-size:15px;gap:22px}
+.brand b{font-size:18px}.brand small{font-size:10px;letter-spacing:1.2px}
+.tools button{font-size:13px;width:36px;height:36px}
+.eyebrow{font-size:14px;letter-spacing:1.6px}
+.head p,.hero .lead{font-size:17px}.meta{font-size:14px}
+.button{font-size:15px;padding:13px 19px;gap:20px}
+.side-label{font-size:13px}.categories a{font-size:15px;gap:12px;line-height:1.5}
+.categories span{font-size:14px}.scholar h3{font-size:18px}.scholar p{font-size:14px}
+.metrics strong{font-size:27px}.metrics small{font-size:12px}.note{font-size:13px!important}
+.searchbox input,.searchbar select{font-size:16px}.result-count{font-size:14px}
+.section-title span{font-size:14px}.paper .year{font-size:15px}
+.paper h3{font-size:18px;line-height:1.6}.paper p{font-size:15px}.paper .authors{font-size:14px}
+.paper .links a{font-size:13px;padding:5px 10px}.source-note{font-size:14px;line-height:1.8}
+.diagram .caption,.diagram .diagram-foot{font-size:12px;line-height:1.7}
+.diagram .diagram-foot{gap:14px;flex-wrap:wrap}.strip{font-size:14px;flex-wrap:wrap}
+.research-item .number{font-size:20px;font-weight:600;color:var(--green)}
+.research-item h3{font-size:23px}.research-item small{font-size:13px}
+.research-item p,.profile-block p{font-size:16px}
+.timeline li{font-size:16px}.timeline time{font-size:15px}.timeline li{grid-template-columns:120px 1fr}
+.contact p{font-size:16px}.footer-row{font-size:13px;line-height:1.8}
+.contact-grid p{font-size:17px}.contact-person{font-size:16px}.contact-person p,.contact-links p{font-size:16px}
+
+/* Prominent topic navigation and broad research introductions. */
+.topic-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:30px 0;border:0;font-family:inherit}
+.topic-nav a{display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--tint);border:1px solid var(--line)}
+.topic-nav a:hover{border-color:var(--green);text-decoration:none}
+.topic-code{font:600 22px/1.4 monospace;letter-spacing:.3px}
+.topic-name{font-size:16px;line-height:1.5;word-break:keep-all}
+.research-detail{grid-template-columns:.85fr 1.15fr;gap:65px;padding:55px 0}
+.research-code{font:600 26px/1.4 monospace;color:var(--green);margin:0 0 18px;letter-spacing:.4px}
+.research-heading h2{font-size:32px;line-height:1.45;word-break:keep-all;margin:0 0 15px}
+.research-heading .research-sub{font-size:14px;line-height:1.7;letter-spacing:.5px;color:var(--green)}
+.research-summary>p{font-size:18px;line-height:1.9;margin-bottom:20px}
+.research-summary .research-overview{font-size:20px;color:var(--ink);line-height:1.7}
+.tags li{font-size:14px;padding:5px 12px}.research-cta h2{font-size:28px}
+
+@media(max-width:1040px){
+ .mobile{display:block}
+ .bar nav{display:none;position:absolute;top:90px;left:0;right:0;background:var(--bg);padding:15px 25px;border-bottom:1px solid var(--line);flex-direction:column;gap:0}
+ .bar nav.open{display:flex}.bar nav a{padding:12px 0;border:0}
+ .research-detail{gap:35px}.topic-nav a{padding:18px}
+}
+@media(max-width:720px){
+ body{font-size:16px}.bar{height:80px;gap:12px}.bar nav{top:80px;font-size:16px;padding:15px 20px}
+ .brand b{font-size:16px}.brand small{font-size:9px;letter-spacing:1px}
+ .tools button{width:32px;height:32px;font-size:13px}
+ .eyebrow{font-size:13px}.head h1{font-size:44px}.head p,.hero .lead{font-size:16px}
+ .research-list,.research-detail{grid-template-columns:1fr}.research-item h3{font-size:22px}
+ .research-detail{gap:15px;padding:35px 0}.research-heading h2{font-size:28px}
+ .research-code{font-size:24px;margin-bottom:12px}.research-summary>p{font-size:17px}
+ .research-summary .research-overview{font-size:19px}.topic-nav{gap:10px}
+ .topic-nav a{padding:15px 12px}.topic-code{font-size:19px}.topic-name{font-size:14px}
+ .paper h3{font-size:17px}.paper p{font-size:15px}.paper .authors{font-size:14px}
+ .searchbar select{max-width:120px}.searchbox input{padding-left:32px}.searchbox span{left:10px}
+ .section-top{flex-wrap:wrap;gap:18px}.footer-row{font-size:13px}
+ .contact-grid p,.contact p{font-size:16px}.contact-grid .email{font-size:23px}
+ .contact-grid h2{font-size:27px}.research-cta h2{font-size:26px}
+}
+@media(max-width:480px){
+ .topic-nav{grid-template-columns:1fr;gap:10px;padding:24px 0}
+ .topic-nav a{flex-direction:row;align-items:center;gap:18px;padding:14px 16px}
+ .topic-code{font-size:20px;flex:0 0 105px}.topic-name{font-size:15px}
+ .timeline li{grid-template-columns:105px 1fr;gap:12px}
+}
+@media(max-width:380px){
+ .brand b{font-size:15px}.brand small{display:none}.mark{width:26px}
+ .bar{gap:8px}.tools{gap:4px}.tools button{width:30px;height:32px}
+ .scholar{grid-template-columns:1fr;gap:15px}.scholar .note,.scholar .button{grid-column:auto;grid-row:auto}
+ .searchbar{flex-wrap:wrap}.searchbox{flex-basis:100%}.searchbar select{max-width:none;width:100%}
+}
