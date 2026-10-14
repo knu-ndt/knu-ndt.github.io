@@ -42,7 +42,7 @@ node build.cjs
 
 ## 공유 미리보기와 SEO
 
-모든 HTML의 Open Graph 대표 이미지는 경북대학교 공식 엠블럼 JPEG를 연결합니다. 원본 비율·색상을 유지하며, 이미지 주소는 build.cjs의 shareImage입니다. 대학에서 파일 주소를 변경하면 이 값을 갱신해야 합니다.
+모든 HTML의 Open Graph 대표 이미지는 경북대학교 공식 엠블럼에 흰 여백을 넣은 600×315 JPEG입니다. 마크의 원본 크기·비율·색상을 유지하며 카카오톡의 가로형 미리보기에서 잘리지 않도록 했습니다. 공개 이미지 서비스 wsrv.nl이 대학 원본을 읽고 여백을 추가합니다. 원본 주소는 build.cjs의 officialEmblem, 공유용 주소는 shareImage입니다. 대학 원본 주소가 변경되거나 이미지 서비스에 문제가 생기면 해당 값을 갱신하거나 같은 이미지를 저장소에 직접 업로드해 교체합니다. 구성원 정보나 사이트 방문자 정보는 이미지 서비스에 전달하지 않습니다.
 
 페이지별 제목·설명, canonical, robots, Open Graph, Twitter 카드와 ResearchOrganization·Person·WebSite·WebPage·BreadcrumbList JSON-LD를 HTML에 포함합니다. 교수 소개의 이전 주소는 people.html을 canonical로 사용하고, sitemap에는 대표 URL 7개만 넣습니다. sitemap의 lastmod는 실제 수정일을 반영해 갱신하세요. 언어 전환은 같은 URL에서 동작하므로 별도 영어 hreflang URL을 만들지 않았습니다.
 
