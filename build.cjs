@@ -5,8 +5,9 @@ const vm = require('node:vm');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname);
 const origin = 'https://knu-ndt.github.io';
-// Official, unmodified KNU emblem: 200 x 200 JPEG.
-const shareImage = 'https://www.knu.ac.kr/wbbs/img/intro/ui_emblem01.jpg';
+// Keep the official emblem unchanged; add white margins for wide social previews.
+const officialEmblem = 'https://www.knu.ac.kr/wbbs/img/intro/ui_emblem01.jpg';
+const shareImage = 'https://wsrv.nl/?url=www.knu.ac.kr%2Fwbbs%2Fimg%2Fintro%2Fui_emblem01.jpg&w=600&h=315&fit=contain&we&cbg=white&output=jpg';
 const updated = '2026-10-14';
 const pages = {
   "index.html": [
@@ -75,10 +76,10 @@ for (const [file,[title,description]] of Object.entries(pages)) {
   const breadcrumb={"@type":"BreadcrumbList","@id":canonical+'#breadcrumb',"itemListElement":[{"@type":"ListItem","position":1,"name":"NDT & SHM Lab","item":origin+'/'}]};
   if(file!=='index.html')breadcrumb.itemListElement.push({"@type":"ListItem","position":2,"name":title.split(' | ')[0],"item":canonical});
   const graph=[
-    {"@type":"ResearchOrganization","@id":labId,"name":"NDT & SHM Lab","alternateName":"경북대학교 NDT & SHM Lab","url":origin+'/',"description":pages['index.html'][1],"email":"kangs@knu.ac.kr","parentOrganization":{"@type":"CollegeOrUniversity","@id":"https://www.knu.ac.kr/#university","name":"경북대학교","alternateName":"Kyungpook National University","url":"https://www.knu.ac.kr/","logo":{"@type":"ImageObject","url":shareImage,"width":200,"height":200}},"member":{"@id":personId}},
+    {"@type":"ResearchOrganization","@id":labId,"name":"NDT & SHM Lab","alternateName":"경북대학교 NDT & SHM Lab","url":origin+'/',"description":pages['index.html'][1],"email":"kangs@knu.ac.kr","parentOrganization":{"@type":"CollegeOrUniversity","@id":"https://www.knu.ac.kr/#university","name":"경북대학교","alternateName":"Kyungpook National University","url":"https://www.knu.ac.kr/","logo":{"@type":"ImageObject","url":officialEmblem,"width":200,"height":200}},"member":{"@id":personId}},
     {"@type":"Person","@id":personId,"name":"강상구","alternateName":"Sanggoo Kang","jobTitle":"Assistant Professor","email":"kangs@knu.ac.kr","url":origin+'/people.html',"affiliation":{"@id":"https://www.knu.ac.kr/#university"},"worksFor":{"@id":labId},"sameAs":["https://scholar.google.com/citations?hl=ko&user=CzZ7ILAAAAAJ","https://research.knu.ac.kr/en/persons/sanggoo-kang/"]},
     {"@type":"WebSite","@id":siteId,"name":"NDT & SHM Lab","alternateName":"NDT & SHM Lab · 경북대학교","url":origin+'/',"inLanguage":["ko","en"],"publisher":{"@id":labId}},
-    {"@type":pageType,"@id":canonical+'#webpage',"url":canonical,"name":title,"description":description,"inLanguage":"ko","isPartOf":{"@id":siteId},"about":{"@id":labId},"breadcrumb":{"@id":canonical+'#breadcrumb'},"primaryImageOfPage":{"@type":"ImageObject","url":shareImage,"width":200,"height":200}},
+    {"@type":pageType,"@id":canonical+'#webpage',"url":canonical,"name":title,"description":description,"inLanguage":"ko","isPartOf":{"@id":siteId},"about":{"@id":labId},"breadcrumb":{"@id":canonical+'#breadcrumb'},"primaryImageOfPage":{"@type":"ImageObject","url":shareImage,"width":600,"height":315}},
     breadcrumb
   ];
   const schema=JSON.stringify({"@context":"https://schema.org","@graph":graph}).replace(/</g,'\\u003c');
@@ -88,8 +89,8 @@ for (const [file,[title,description]] of Object.entries(pages)) {
 <title>${escape(title)}</title><meta name="description" content="${escape(description)}">
 ${file==='404.html'?'<meta name="robots" content="noindex, follow">':`<meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="${canonical}">`}
 <meta property="og:type" content="website"><meta property="og:site_name" content="NDT &amp; SHM Lab"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${canonical}"><meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="${shareImage}"><meta property="og:image:secure_url" content="${shareImage}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="200"><meta property="og:image:height" content="200"><meta property="og:image:alt" content="경북대학교 공식 엠블럼">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><meta name="twitter:image" content="${shareImage}"><meta name="twitter:image:alt" content="경북대학교 공식 엠블럼">
+<meta property="og:image" content="${escape(shareImage)}"><meta property="og:image:secure_url" content="${escape(shareImage)}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="600"><meta property="og:image:height" content="315"><meta property="og:image:alt" content="경북대학교 공식 엠블럼">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><meta name="twitter:image" content="${escape(shareImage)}"><meta name="twitter:image:alt" content="경북대학교 공식 엠블럼">
 <meta name="theme-color" content="#224e3d"><link rel="icon" type="image/svg+xml" href="${prefix}favicon.svg">
 <link rel="stylesheet" href="${prefix}${asset('style.css')}"><script type="application/ld+json">${schema}</script>
 <script defer src="${prefix}${asset('publications.js')}"></script><script defer src="${prefix}${asset('app.js')}"></script>
