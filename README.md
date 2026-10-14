@@ -39,3 +39,13 @@ node build.cjs
 - 대학 주소: https://www.knu.ac.kr/wbbs/wbbs/main/main.action
 
 연구 개념도는 코드로 제작한 설명용 도식입니다. 구성원 정보는 연구실이 제공한 과정과 시기를 반영했습니다. 박재한의 석사 졸업 이력은 현재 박사과정 프로필에 함께 표시합니다. 정성원은 입학 예정으로 구분합니다. 수상과 갤러리는 실제 자료를 받은 뒤 추가하며, 연구실 호실은 아직 확인되지 않았습니다. 주소는 대학 주소이며, 실제 방문 장소는 교수에게 확인해야 합니다.
+
+## 공유 미리보기와 SEO
+
+모든 HTML의 Open Graph 대표 이미지는 경북대학교 공식 엠블럼 JPEG를 연결합니다. 원본 비율·색상을 유지하며, 이미지 주소는 build.cjs의 shareImage입니다. 대학에서 파일 주소를 변경하면 이 값을 갱신해야 합니다.
+
+페이지별 제목·설명, canonical, robots, Open Graph, Twitter 카드와 ResearchOrganization·Person·WebSite·WebPage·BreadcrumbList JSON-LD를 HTML에 포함합니다. 교수 소개의 이전 주소는 people.html을 canonical로 사용하고, sitemap에는 대표 URL 7개만 넣습니다. sitemap의 lastmod는 실제 수정일을 반영해 갱신하세요. 언어 전환은 같은 URL에서 동작하므로 별도 영어 hreflang URL을 만들지 않았습니다.
+
+카카오톡에 이전 미리보기가 남아 있으면 카카오디벨로퍼스의 카카오톡 URL 메타정보 관리에서 해당 URL의 캐시를 초기화합니다. 사이트맵: https://knu-ndt.github.io/sitemap.xml . Google Search Console과 네이버 서치어드바이저의 사이트 소유권 확인·등록은 해당 계정에서 진행해야 합니다.
+
+엠블럼 출처: https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_idx=194&menu_url=intro/about04
