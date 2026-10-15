@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Structural intelligence</title><desc id="desc">An architectural concept illustration of sensing, wave analysis and safety assessment across buildings and infrastructure. No measured data is shown.</desc>
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="720" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#112b2c"/><stop offset=".55" stop-color="#173e3a"/><stop offset="1" stop-color="#0c2023"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#a0dcbb" stop-opacity=".19"/><stop offset="1" stop-color="#a0dcbb" stop-opacity="0"/></radialGradient>
+ <linearGradient id="front" x1="190" y1="185" x2="325" y2="455" gradientUnits="userSpaceOnUse"><stop stop-color="#a4c0b4" stop-opacity=".75"/><stop offset="1" stop-color="#537f76" stop-opacity=".36"/></linearGradient>
+ <linearGradient id="side" x1="325" y1="230" x2="470" y2="375" gradientUnits="userSpaceOnUse"><stop stop-color="#6b9989" stop-opacity=".61"/><stop offset="1" stop-color="#264b47" stop-opacity=".8"/></linearGradient>
+ <linearGradient id="scan" x1="150" y1="285" x2="590" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#67dec2" stop-opacity="0"/><stop offset=".52" stop-color="#67dec2" stop-opacity=".3"/><stop offset="1" stop-color="#67dec2" stop-opacity=".02"/></linearGradient>
+ <linearGradient id="deck" x1="300" y1="450" x2="610" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#83a79a"/><stop offset="1" stop-color="#335f58"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>
+ <clipPath id="frame"><rect width="720" height="600" rx="3"/></clipPath>
+</defs>
+<g clip-path="url(#frame)">
+ <rect width="720" height="600" fill="url(#sky)"/>
+ <ellipse cx="370" cy="310" rx="330" ry="270" fill="url(#halo)"/>
+ <g stroke="#94c2ae" opacity=".08" stroke-width=".8"><path d="M45 430L310 560" /><path d="M45 430L310 300" /><path d="M90 408L355 538" /><path d="M90 452L355 322" /><path d="M135 386L400 516" /><path d="M135 474L400 344" /><path d="M180 364L445 494" /><path d="M180 496L445 366" /><path d="M225 342L490 472" /><path d="M225 518L490 388" /><path d="M270 320L535 450" /><path d="M270 540L535 410" /><path d="M315 298L580 428" /><path d="M315 562L580 432" /><path d="M360 276L625 406" /><path d="M360 584L625 454" /><path d="M405 254L670 384" /><path d="M405 606L670 476" /><path d="M450 232L715 362" /><path d="M450 628L715 498" /><path d="M495 210L760 340" /><path d="M495 650L760 520" /><path d="M540 188L805 318" /><path d="M540 672L805 542" /><path d="M585 166L850 296" /><path d="M585 694L850 564" /></g>
+ <path d="M80 440 352 295 649 414 376 566Z" fill="#2d554d" fill-opacity=".42" stroke="#b1d2bd" stroke-opacity=".16"/>
+ <path d="M120 454 367 324 610 424 365 553Z" fill="#0a211f" fill-opacity=".38"/>
+ <!-- Tower: roof, glazed front and side. -->
+ <path d="M190 185 325 230 470 150 335 105Z" fill="#b9d0bc" fill-opacity=".83" stroke="#d9e8d5" stroke-opacity=".8"/>
+ <path d="M190 185 325 230V455L190 410Z" fill="url(#front)" stroke="#bad7c6" stroke-opacity=".65"/>
+ <path d="M325 230 470 150V375L325 455Z" fill="url(#side)" stroke="#bad7c6" stroke-opacity=".65"/>
+ <path d="M205 182 335 114 452 152 323 222Z" fill="#264b44" fill-opacity=".62" stroke="#c3ddc9" stroke-opacity=".35"/>
+ <g stroke="#b0d3bc" stroke-opacity=".42" stroke-width=".8"><path d="M190 210L325 255" /><path d="M325 255L470 175" /><path d="M190 235L325 280" /><path d="M325 280L470 200" /><path d="M190 260L325 305" /><path d="M325 305L470 225" /><path d="M190 285L325 330" /><path d="M325 330L470 250" /><path d="M190 310L325 355" /><path d="M325 355L470 275" /><path d="M190 335L325 380" /><path d="M325 380L470 300" /><path d="M190 360L325 405" /><path d="M325 405L470 325" /><path d="M190 385L325 430" /><path d="M325 430L470 350" /><path d="M217 194L217 419" /><path d="M354 214L354 439" /><path d="M244 203L244 428" /><path d="M383 198L383 423" /><path d="M271 212L271 437" /><path d="M412 182L412 407" /><path d="M298 221L298 446" /><path d="M441 166L441 391" /></g>
+ <path d="M219 195V419M275 213V438M369 206V430M428 174V398" stroke="#d6e9d6" stroke-opacity=".35" stroke-width="2"/>
+ <!-- Low infrastructure deck and piers in the foreground. -->
+ <path d="M428 436V485L446 493V443M558 366V417L575 424V374" stroke="#b2cec0" stroke-width="12"/>
+ <path d="M349 444 588 316 627 330 389 462Z" fill="url(#deck)" stroke="#bddac8" stroke-opacity=".7"/>
+ <path d="M389 462 627 330V345L389 478Z" fill="#274f47" stroke="#a2cdb7" stroke-opacity=".4"/>
+ <path d="M349 444 389 462V478L349 460Z" fill="#618b7d"/>
+ <path d="M371 445 608 318M385 453 623 325" stroke="#d2dec5" stroke-width="1.4" stroke-opacity=".7"/>
+ <g stroke="#bddac8" stroke-opacity=".5"><path d="M349 444V426L588 298V316M389 462V444L627 312V330"/>
+ <path d="M389 444 389 433M432 420 432 409M475 396 475 385M519 372 519 361M562 348 562 337M605 324 605 313"/></g>
+ <!-- Conceptual scan plane and sensing network. -->
+ <path d="M136 315 379 185 614 278 371 411Z" fill="url(#scan)" stroke="#72ddbf" stroke-opacity=".33"/>
+ <path d="M136 315 371 411 614 278" stroke="#83e4c6" stroke-opacity=".6"/>
+ <g stroke="#93e4c8" stroke-width="1.5"><path d="M258 315 382 253 544 369" stroke-dasharray="4 6" stroke-opacity=".7"/>
+ <circle cx="258" cy="315" r="16" stroke-opacity=".4"/><circle cx="258" cy="315" r="25" stroke-opacity=".17"/><circle cx="382" cy="253" r="15" stroke-opacity=".35"/><circle cx="544" cy="369" r="19" stroke-opacity=".35"/></g>
+ <g fill="#b7f8d7"><circle cx="258" cy="315" r="5"/><circle cx="382" cy="253" r="5"/><circle cx="544" cy="369" r="5"/></g>
+ <g fill="#8cefc9" opacity=".7" filter="url(#glow)"><circle cx="258" cy="315" r="7"/><circle cx="382" cy="253" r="7"/><circle cx="544" cy="369" r="7"/></g>
+ <g stroke="#b4d4c4" stroke-opacity=".6" stroke-width=".8"><path d="M258 315 144 272H73M382 253 494 191H620M544 369 602 397H653"/></g>
+ <g fill="#d8e8df" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.7"><text x="58" y="260">SENSING</text><text x="534" y="177">ASSESSMENT</text><text x="605" y="417">SAFETY</text></g>
+ <path d="M38 37H61M38 37V60M682 37H659M682 37V60M38 563H61M38 563V540M682 563H659M682 563V540" stroke="#b8d6c4" stroke-opacity=".55"/>
+ <g fill="#c8ddcf" font-family="Arial,sans-serif"><text x="58" y="68" font-size="15" letter-spacing="2.6">STRUCTURAL INTELLIGENCE</text><text x="58" y="548" font-size="12" letter-spacing="2.2" opacity=".7">NDT / SHM / CONSTRUCTION SAFETY</text></g>
+ <path d="M527 514h15l8-11 10 21 12-28 9 18h20" stroke="#9ed9ba" stroke-width="1.5" stroke-linejoin="round"/>
+</g></svg>
