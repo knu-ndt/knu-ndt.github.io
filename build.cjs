@@ -8,23 +8,19 @@ const origin = 'https://knu-ndt.github.io';
 // Keep the official emblem unchanged; add white margins for wide social previews.
 const officialEmblem = 'https://www.knu.ac.kr/wbbs/img/intro/ui_emblem01.jpg';
 const shareImage = 'https://wsrv.nl/?url=www.knu.ac.kr%2Fwbbs%2Fimg%2Fintro%2Fui_emblem01.jpg&w=600&h=315&fit=contain&we&cbg=white&output=jpg';
-const updated = '2026-10-14';
+const updated = '2026-10-15';
 const pages = {
   "index.html": [
     "NDT & SHM Lab | 경북대학교 강상구 교수 연구실",
-    "경북대학교 건축학부 강상구 교수의 NDT & SHM Lab. 비파괴검사(NDT), 구조건전성 모니터링(SHM), 데이터 기반 진단 연구와 논문, 구성원 정보를 소개합니다."
+    "경북대학교 건축학부 강상구 교수의 NDT & SHM Lab. 비파괴검사, 구조건전성 모니터링, 건설안전, 데이터 기반 진단 연구와 논문, 구성원 정보를 소개합니다."
   ],
   "research.html": [
     "연구분야 | NDT & SHM Lab · 경북대학교",
-    "경북대학교 NDT & SHM Lab의 비파괴검사(NDT), 구조건전성 모니터링(SHM), 데이터 기반 진단 연구. 재료와 구조물의 상태 평가 및 안전한 유지관리 방법을 연구합니다."
+    "경북대학교 NDT & SHM Lab의 비파괴검사(NDT), 구조건전성 모니터링(SHM), 데이터 기반 진단과 건설안전 연구를 소개합니다."
   ],
   "people.html": [
     "People · 교수 및 구성원 | NDT & SHM Lab · 경북대학교",
     "경북대학교 건축학부 강상구 교수와 NDT & SHM Lab 구성원 소개. 박사과정, 석사과정, 학석연계과정, 학부연구생과 입학 예정 프로필 및 과정 이력을 확인하세요."
-  ],
-  "awards.html": [
-    "Awards · 수상 | NDT & SHM Lab · 경북대학교",
-    "경북대학교 NDT & SHM Lab의 수상 소식과 사진을 소개하는 페이지입니다. 수상 기록은 준비 중입니다."
   ],
   "gallery.html": [
     "Gallery · 갤러리 | NDT & SHM Lab · 경북대학교",
@@ -36,7 +32,7 @@ const pages = {
   ],
   "publications.html": [
     "Publications · 논문 | NDT & SHM Lab · 경북대학교",
-    "경북대학교 강상구 교수의 국제·국내 학술지 논문, 학술대회와 학위논문 목록. 논문 검색, 연도별 필터, Google Scholar 및 DOI 링크를 제공합니다."
+    "경북대학교 NDT & SHM Lab의 국제·국내 학술지 논문, 특허 분류와 학위논문 목록. 연구 성과 검색, 연도별 필터와 원문 링크를 제공합니다."
   ],
   "contact.html": [
     "Contact · 연락처 | NDT & SHM Lab · 경북대학교",
@@ -72,7 +68,7 @@ for (const [file,[title,description]] of Object.entries(pages)) {
   const header=nodes['#header'].innerHTML.replace('class="active"','class="active" aria-current="page"');
   const canonical=file==='index.html'?`${origin}/`:`${origin}/${file==='professor.html'?'people.html':file}`;
   const labId=origin+'/#lab',siteId=origin+'/#website',personId=origin+'/people.html#profile-sanggoo-kang';
-  const pageType=file==='contact.html'?'ContactPage':['people.html','professor.html','publications.html','awards.html','gallery.html'].includes(file)?'CollectionPage':'WebPage';
+  const pageType=file==='contact.html'?'ContactPage':['people.html','professor.html','publications.html','gallery.html'].includes(file)?'CollectionPage':'WebPage';
   const breadcrumb={"@type":"BreadcrumbList","@id":canonical+'#breadcrumb',"itemListElement":[{"@type":"ListItem","position":1,"name":"NDT & SHM Lab","item":origin+'/'}]};
   if(file!=='index.html')breadcrumb.itemListElement.push({"@type":"ListItem","position":2,"name":title.split(' | ')[0],"item":canonical});
   const graph=[
@@ -99,4 +95,4 @@ ${file==='404.html'?'<meta name="robots" content="noindex, follow">':`<meta name
 <noscript><style>.tools,.searchbar,.member-filters{display:none}.member-detail-fallback{display:block}</style></noscript></body></html>\n`);
 }
 fs.writeFileSync(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.keys(pages).filter(x=>x!=='404.html'&&x!=='professor.html').map(x=>`<url><loc>${origin}/${x==='index.html'?'':x}</loc><lastmod>${updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
-console.log('Built nine static pages and sitemap.');
+console.log('Built eight static pages and sitemap.');
